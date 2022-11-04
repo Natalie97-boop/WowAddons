@@ -1,0 +1,11 @@
+import os
+import subprocess
+
+def main():
+    for files in os.listdir(os.path.dirname(__file__)):
+        if files.endswith('.zip'):
+            print("Extracting {} to WoW Addon Directory...".format(files))
+            
+            subprocess.run(["tar", "-xvzf", os.path.join(os.path.dirname(__file__), files),"-C", "C:\Program Files (x86)\World of Warcraft\_retail_\Interface\AddOns"])
+
+main()
